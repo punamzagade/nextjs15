@@ -1,5 +1,7 @@
-import { ErrorWrapper } from './error-wrapper'
+import { ClerkProvider } from '@clerk/nextjs'
+// import { ErrorWrapper } from './error-wrapper'
 import '/globals.css'
+import { Navigation } from './components/navigation'
 
 // export const metadata = {
 //   title: 'Next.js',
@@ -21,13 +23,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <ClerkProvider>
     <html lang="en"> 
       <body>
         <div>New Feature</div>
       {/* <ErrorWrapper> */}
+      <Navigation/>
         {children}
         {/* </ErrorWrapper> */}
       </body>
     </html>
+    </ClerkProvider>
   )
 }
